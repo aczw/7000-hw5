@@ -11,7 +11,7 @@ const history = t.sqliteTable("history", {
   assetName: t.text().references(() => assets.name),
   author: t.text().notNull(),
   version: t.text().notNull(),
-  timestamp: t.int({ mode: "timestamp_ms" }).notNull(),
+  timestamp: t.text().notNull(),
   note: t.text().notNull(),
 });
 

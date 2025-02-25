@@ -1,0 +1,21 @@
+Charles Wang
+CIS 7000
+
+EXTRA CREDIT: although I didn't have time to implement retrieving a specific asset, I was able to implement a frontend that retrieved ALL the assets in the database. It is publicly available at https://7000-hw5.vercel.app/ and displays all the assets in my database.
+
+NOTE: my scripts are tightly coupled with my frontend, and therefore the retrieval and add scripts reference other JavaScript files that are part of my overall frontend. So they technically can't run on their own. I didn't submit my whole repo on Canvas, but I can show it to you if needed.
+
+First and foremost, I chose SQLite as my database of choice. This locked me into certain decisions: for example, SQLite is very lightweight (compared to some of the other choices that were presented) and one way that this presents itself is that it has very limited base datatypes to work with e.g. there exists no boolean, so people usually just use the integer type and restrict themselves to 0s and 1s.
+
+It turns out that SQLite has everything that we need, and can actually store the assets and thumbnails themselves without relying on something like S3 for blob storage! This is because SQLite has a built-in BLOB datatype that allows us to encode our images as literal bytes. Furthermore, I chose to store the .usda file for each asset, which is just plain text, so we can just use SQLite's TEXT datatype.
+
+My actual database is laid out across three tables: "assets", "history", and "keywords". The "assets" table stores the asset name and the associated thumbnail as well as .usda file, but it does not store any of the commit history or keywords on its own. This is because there isn't an array type like there is in JSON, which is how we represented these fields in metadata.json. So instead I maintain two new tables that specifically hold entries related to them, with columns modeled after the fields in metadata.json.
+
+For example, the "history" table is simply our commitHistory field. But it has an additional field: the "assetName" column associates the row back to the "assets" table, where the name is the primary key (so it's unique and definitely not null). I do the same thing for the "keywords" table.
+
+This way, whenever we retrieve information, we can do it two ways:
+
+1) Using the asset name: we select from the "assets" table, and select all the rows from the "history" and "keywords" table where the assetName column equals the input.
+2) Search by keywords instead, from which we can access the assetName column, allowing us to go back to the first way to retrieve the remaining info.
+
+Note that we could technically store everything as a string in JSON format using SQLite's TEXT datatype, but this goes against the spirit of the homework :) Also, I have the suspicion that this is slower than taking advantage of SQLite's table data structures (because everything is a string, so we need to JSON.parse/toString() everything).

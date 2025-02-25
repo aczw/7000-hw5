@@ -21,8 +21,13 @@
     "typescript": "^5"
   },
   "dependencies": {
+    "@astrojs/react": "^4.2.0",
     "@libsql/client": "^0.14.0",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
     "astro": "^5.3.1",
-    "drizzle-orm": "^0.39.3"
+    "drizzle-orm": "^0.39.3",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   }
 }

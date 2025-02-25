@@ -1,0 +1,77 @@
+#usda 1.0
+
+def Xform "skateboard_LOD1"
+{
+    def Cube "Deck"
+    {
+        double size = 70
+        float3 xformOp:scale = (0.3, 0.03, 1)
+        double3 xformOp:translate = (0, 300, 0)
+        uniform token[] xformOpOrder = ["xformOp:scale", "xformOp:translate"]
+    }
+
+    def Cylinder "Wheel_0"
+    {
+        uniform token axis = "Y"
+        double height = 3.5
+        double radius = 4
+        float xformOp:rotateX = 90
+        float xformOp:rotateZ = 90
+        double3 xformOp:translate = (-9, 4, 18)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateX", "xformOp:rotateZ"]
+    }
+
+    def Cylinder "Wheel_1"
+    {
+        uniform token axis = "Y"
+        double height = 3.5
+        double radius = 4
+        float xformOp:rotateX = 90
+        float xformOp:rotateZ = 90
+        double3 xformOp:translate = (9, 4, 18)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateX", "xformOp:rotateZ"]
+    }
+
+    def Cylinder "Wheel_2"
+    {
+        uniform token axis = "Y"
+        double height = 3.5
+        double radius = 4
+        float xformOp:rotateX = 90
+        float xformOp:rotateZ = 90
+        double3 xformOp:translate = (-9, 4, -18)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateX", "xformOp:rotateZ"]
+    }
+
+    def Cylinder "Wheel_3"
+    {
+        uniform token axis = "Y"
+        double height = 3.5
+        double radius = 4
+        float xformOp:rotateX = 90
+        float xformOp:rotateZ = 90
+        double3 xformOp:translate = (9, 4, -18)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateX", "xformOp:rotateZ"]
+    }
+
+    def Cylinder "Axis_0"
+    {
+        uniform token axis = "X"
+        double height = 18
+        double radius = 1
+        float xformOp:rotateX = 90
+        double3 xformOp:translate = (0, 4, 18)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateX"]
+    }
+
+    def Cylinder "Axis_1"
+    {
+        uniform token axis = "X"
+        double height = 18
+        double radius = 1
+        float xformOp:rotateX = 90
+        double3 xformOp:translate = (0, 4, -18)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateX"]
+    }
+}
+

@@ -1,0 +1,37 @@
+#usda 1.0
+
+def Xform "skateboard" (
+    variants = {
+        string LOD = "skateboard_LOD0"
+    }
+    prepend variantSets = "LOD"
+)
+{
+    variantSet "LOD" = {
+        "skateboard_LOD0" {
+            def "skateboard_LOD0" (
+                prepend references = @./LODs/skateboard_LOD0.usda@</skateboard_LOD0>
+            )
+            {
+            }
+
+        }
+        "skateboard_LOD1" {
+            def "skateboard_LOD1" (
+                prepend references = @./LODs/skateboard_LOD1.usda@</skateboard_LOD1>
+            )
+            {
+            }
+
+        }
+        "skateboard_LOD2" {
+            def "skateboard_LOD2" (
+                prepend references = @./LODs/skateboard_LOD2.usda@</skateboard_LOD2>
+            )
+            {
+            }
+
+        }
+    }
+}
+

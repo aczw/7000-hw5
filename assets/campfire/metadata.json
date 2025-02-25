@@ -1,0 +1,26 @@
+{
+  "assetName": "campfire.fbx",
+  "assetStructureVersion": "03.00.00",
+  "keywords": ["campfire", "logs", "rocks", "stones", "wood", "camp", "outdoors", "firepit", "bonfire", "survival"],
+  "hasTexture": false,
+  "commitHistory": [
+      {
+          "author": "aajiang",
+          "version": "03.00.00",
+          "timestamp": "2025-02-13T00:28:00-05",
+          "note": "Converted LODs to a variant set"
+      }, 
+      {
+          "author": "jyguan",
+          "version": "02.00.00",
+          "timestamp": "2025-01-30T16:20:00-05",
+          "note": "Added LODs"
+      },
+      {
+          "author": "jyguan",
+          "version": "01.00.00",
+          "timestamp": "2024-11-21T12:00:00-05",
+          "note": "Initial creation"
+      }
+  ]
+}	

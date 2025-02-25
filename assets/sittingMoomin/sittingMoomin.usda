@@ -1,0 +1,39 @@
+#usda 1.0
+(
+    defaultPrim = "sittingMoomin"
+)
+
+def Xform "sittingMoomin" (
+    prepend variantSets = ["LOD"]
+    variants = {
+        string LOD = "sittingMoomin_LOD0"
+    }
+)
+{
+
+    variantSet "LOD" = {
+        "sittingMoomin_LOD0" {
+            def "sittingMoomin_LOD0" (
+              references = [
+                  @./LODs/sittingMoomin_LOD0.usda@</sittingMoomin_LOD0>
+              ]
+            ){}
+        }
+
+        "sittingMoomin_LOD1" {
+            def "sittingMoomin_LOD1"  (
+              references = [
+                  @./LODs/sittingMoomin_LOD1.usda@</sittingMoomin_LOD1>
+              ]
+            ){}
+        }
+
+        "sittingMoomin_LOD2" {
+            def "sittingMoomin_LOD2" (
+              references = [
+                  @./LODs/sittingMoomin_LOD2.usda@</sittingMoomin_LOD2>
+              ]
+            ){}
+        }
+    }
+}

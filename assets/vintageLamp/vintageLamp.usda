@@ -1,0 +1,30 @@
+#usda 1.0
+
+def Xform "vintageLamp" (
+    prepend variantSets = "LOD"
+    variants = {
+        string LOD = "vintageLamp_LOD0"
+    }
+)
+{
+    variantSet "LOD" = {
+        "vintageLamp_LOD0" {
+            def "vintageLamp_LOD0" (
+                prepend references = @./LODs/vintageLamp_LOD0.usda@</vintageLamp_LOD0>
+            ) {}
+
+        }
+        "vintageLamp_LOD1" {
+            def "vintageLamp_LOD1" (
+                prepend references = @./LODs/vintageLamp_LOD1.usda@</vintageLamp_LOD1>
+            ) {}
+
+        }
+        "vintageLamp_LOD2" {
+            def "vintageLamp_LOD2" (
+                prepend references = @./LODs/vintageLamp_LOD2.usda@</vintageLamp_LOD2>
+            ) {}
+        }
+    }
+}
+

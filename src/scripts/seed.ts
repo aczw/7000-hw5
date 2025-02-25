@@ -4,6 +4,13 @@ import { resolve } from "node:path";
 import { assets, history, keywords } from "@/db/schema";
 import { db } from "@/db/turso";
 
+/**
+ * This file was used to automatically insert our class' assets into the database without me
+ * having to do it manually. To use it, download a copy of the Week 4 assets, rename the folder
+ * to just "assets", and place it in the root directory i.e. "7000-hw5." Then run the script
+ * (and obviously set the right env vars to access the Turso database).
+ */
+
 const assetsPath = resolve("./assets");
 const assetNames = readdirSync(assetsPath, { withFileTypes: true })
   .filter((dirent) => dirent.isDirectory())

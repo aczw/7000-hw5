@@ -1,8 +1,11 @@
+import react from "@astrojs/react";
+import vercel from "@astrojs/vercel";
 import { defineConfig, envField } from "astro/config";
 
-import react from "@astrojs/react";
-
 export default defineConfig({
+  output: "server",
+  integrations: [react()],
+  adapter: vercel(),
   env: {
     schema: {
       TURSO_DATABASE_URL: envField.string({
@@ -17,6 +20,4 @@ export default defineConfig({
       }),
     },
   },
-
-  integrations: [react()],
 });
